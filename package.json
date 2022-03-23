@@ -2,7 +2,7 @@
   "name": "ubiquity-task",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,6 +12,7 @@
   "dependencies": {
     "chromedriver": "^99.0.0",
     "geckodriver": "^3.0.1",
-    "selenium-webdriver": "^4.1.1"
+    "selenium-webdriver": "^4.1.1",
+    "sitemaps": "^1.0.0"
   }
 }
