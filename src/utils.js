@@ -14,7 +14,10 @@ async function waitForElement(type, query, waitTime, driver) {
       return driver.wait(function () {
         return driver.findElement(By.className(query));
         }, waitTime)
-  
+    case "id":
+      return driver.wait(function () {
+        return driver.findElement(By.id(query));
+        }, waitTime)  
     default:
       return "Unrecognized type!"
   }

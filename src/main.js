@@ -29,16 +29,31 @@ async function octaTests(){
     console.log(`Could not change language of the page, following error occurred: ${e}!`);
   }
 
-  // At this point, the try/catch block generates an XML sitemap for the main sections of the webpage/
+  // At this point the test inputs dummy data in the OCTA calculator, ticks the checkbox and proceeds with the calculation.
+  // In case of an error, it is handled with the exception.
+  try {
+    await waitForElement("id", "regNr", 3000, driver);
+    await driver.findElement(By.id("regNr")).sendKeys("AA-1111");
+    await waitForElement("id", "regSert", 3000, driver);
+    await driver.findElement(By.id("regSert")).sendKeys("AF 1234567");
+    await waitForElement("id", "field_use_user_data", 3000, driver);
+    await driver.findElement(By.id("field_use_user_data")).click();
+    await waitForElement("xpath", "/html/body/div[5]/div/aside/div[1]/form/input[5]", 3000, driver);
+    await driver.findElement(By.xpath("/html/body/div[5]/div/aside/div[1]/form/input[5]")).click();
+  } catch(e) {
+    console.log(`Could not calculate OCTA, following error occurred: ${e}!`);
+  }
+
+  // At this point, the try/catch block generates an XML sitemap for the main sections of the webpage.
   // In case of an error, it is handled with the exception.
   try {
     sitemaps(filePath, links);
-  } catch (e) {
+  } catch(e) {
     console.log(`Could not create sitemap, following error occurred: ${e}!`);
   }
 
-  // Keeps the browser open for a few seconds and then closes it after execution. 
-  await sleep(3000);
+  // Keeps the browser open for five seconds so it can be observed what happens and then closes it after execution. 
+  await sleep(5000);
   await driver.quit();
 
 };

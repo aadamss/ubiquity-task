@@ -18,7 +18,7 @@
 ### The tests
 
 - The first test changes the language of the page from `LV` to `RU`, then back to `LV`
-- The second test inputs some values, checks the agreement box and calculates an `OCTA`
+- The second test inputs some values, checks the agreement box and calculates an `OCTA`. Not that values input are dummy values so it will not actually find an Octa offer. In order to get a genuine offer, a real license plate and technical passport number should be submitted.
 - The third test takes the specified sections of the web page, creates a `sitemaps` folder and generates an `XML` file containing the `sitemap`
 
 ### Tech stack used:
