@@ -17,8 +17,8 @@ async function octaTests(){
   // Custom sleep function.
   const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
 
-  // Fetches the main Atra Octa page, then performs the needed actions.
-  // Everything is placed in a try/catch block in order to handle possible errors, exceptions.
+  // Fetches the main Atra Octa page, then performs the language switch from LV to RU, then back to LV.
+  // In case of an error, it is handled with the exception.
   try {
     await driver.get("https://www.atraocta.lv/");
     await waitForElement("xpath", "//a[@href='https://www.atraocta.lv/ru']", 3000, driver);
@@ -29,6 +29,8 @@ async function octaTests(){
     console.log(`Could not change language of the page, following error occurred: ${e}!`);
   }
 
+  // At this point, the try/catch block generates an XML sitemap for the main sections of the webpage/
+  // In case of an error, it is handled with the exception.
   try {
     sitemaps(filePath, links);
   } catch (e) {
@@ -39,6 +41,6 @@ async function octaTests(){
   await sleep(3000);
   await driver.quit();
 
-}
+};
 
 octaTests()

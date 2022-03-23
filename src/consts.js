@@ -1,5 +1,7 @@
+// The file path where the XML sitemap file is written to.
 const filePath = '../sitemaps/sitemap.xml';
 
+// The subpages of the website that need to be placed in a sitemap, with custom config options.
 const links = [
   {
       loc: 'https://www.atraocta.lv/lv/par-mums',
@@ -63,4 +65,4 @@ const links = [
   },
 ];
 
-module.exports = {filePath, links}
+module.exports = {filePath, links};

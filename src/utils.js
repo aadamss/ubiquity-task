@@ -18,6 +18,6 @@ async function waitForElement(type, query, waitTime, driver) {
     default:
       return "Unrecognized type!"
   }
-}
+};
 
 module.exports = waitForElement;
