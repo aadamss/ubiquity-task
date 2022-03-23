@@ -4,9 +4,9 @@
 
 - Automated tests should be done only for this web page `https://atraocta.lv/` (you don't need to create tests for any sub-pages).
 - Please create automated tests for these scenarios:
-  1. Language switch;
-  2. Octa calculation (block “OCTA kalkulators”);
-  3. Create sitemap for these sections:
+  - Language switch;
+  - Octa calculation (block “OCTA kalkulators”);
+  - Create sitemap for the main sections of the page;
 
 ### Running the tests
 
@@ -14,5 +14,5 @@
 
 ### Tech stack used:
 
-- JavaScript
-- Selenium
+- `JavaScript`
+- `Selenium`
